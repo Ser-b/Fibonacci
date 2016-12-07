@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1>Попадает ли число в ряд Фибоначчи:</h1>
+<p>Введите число</p>
+<input type="text" id="number" placeholder="Введите здесь"><button id="btn">Поиск</button>
+	<script>
+	var but = document.getElementById('btn');
+	but.onclick = function(event) {
+		var num = document.getElementById('number').value;
+		var previous;
+		var thiz = 0, next = 1;
+		while (thiz < num) {
+			previous = thiz;
+  			thiz = next;
+  			next = previous + thiz;
+		}
+
+		if (thiz == num) {
+			alert('Выбранное число попадает в ряд Фибоначчи')
+		}
+
+		else {
+			alert('Выбранное число не попадает в ряд Фибоначчи')
+		}
+	}
+	</script>
+</body>
+</html>
